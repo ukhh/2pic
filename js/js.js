@@ -30,8 +30,6 @@ $(document).ready(function() {
          
 		images[counter++] = img;
 
-
-        console.log(counter)
         if (counter > 1) {
           
 
@@ -41,23 +39,15 @@ $(document).ready(function() {
             	$($table[0].rows[(images[1][1])].children[(images[1][0])]).off('click');
 
             } else {
-            	
+
             	$($table[0].rows[(images[0][1])].children[(images[0][0])]).find('img').toggle();
-            	$($table[0].rows[(images[1][1])].children[(images[1][0])]).find('img').toggle();
+            	$($table[0].rows[(images[1][1])].children[(images[1][0])]).find('img').toggle(2500);
             	
             }
 
             images=[];
             counter = 0;
         }
-
-        
- 		
-
-		
-        
-        console.log(counter);
-        console.log(images);
 
     });
 });
