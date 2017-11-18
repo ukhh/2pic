@@ -6,12 +6,6 @@ $(document).ready(function() {
 
     var images = [];
 
-
-
-
-
-
-
     $('td').click(function() {
 
         let img = [];
@@ -25,27 +19,27 @@ $(document).ready(function() {
         img.push(src);
         img.push(tdObj);
 
-        $(this).find('img').toggle();
+        $(this).find('img').toggle(0.1);
 
-         
-		images[counter++] = img;
+
+        images[counter++] = img;
 
         if (counter > 1) {
-          
 
-            if(images[0][2] == images[1][2] && images[1][3]!=images[0][3]){
 
-            	$($table[0].rows[(images[0][1])].children[(images[0][0])]).off('click');
-            	$($table[0].rows[(images[1][1])].children[(images[1][0])]).off('click');
+            if (images[0][2] == images[1][2] && images[1][3] != images[0][3]) {
+
+                $($table[0].rows[(images[0][1])].children[(images[0][0])]).off('click');
+                $($table[0].rows[(images[1][1])].children[(images[1][0])]).off('click');
 
             } else {
 
-            	$($table[0].rows[(images[0][1])].children[(images[0][0])]).find('img').toggle();
-            	$($table[0].rows[(images[1][1])].children[(images[1][0])]).find('img').toggle(2500);
-            	
+                $($table[0].rows[(images[0][1])].children[(images[0][0])]).find('img').delay(800).toggle(0.1);  //bug whith toggle animation it passed rapidly but sometimes you can spot it
+                $($table[0].rows[(images[1][1])].children[(images[1][0])]).find('img').delay(800).toggle(0.1);
+
             }
 
-            images=[];
+            images = [];
             counter = 0;
         }
 
