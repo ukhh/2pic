@@ -1,5 +1,8 @@
 $(document).ready(function(){
 $('td').click(function(){
-	alert('hello');
+	//alert('hello');
+	
+	console.log(this);
+	$(this).find('img').toggle();
 });
 });
